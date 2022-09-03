@@ -7,7 +7,9 @@ public class CamControl : MonoBehaviour
     private GameObject TargetPlayer;
     [SerializeField] private Vector3 Distance;
     [SerializeField] private float CamSpeed = 100f;
-
+    
+    
+    
     private void Awake()
     {
         TargetPlayer = GameObject.FindWithTag("Player");
