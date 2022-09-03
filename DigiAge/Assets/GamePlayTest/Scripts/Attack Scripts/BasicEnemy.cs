@@ -27,6 +27,11 @@ public class BasicEnemy : MonoBehaviour
     }
     private void Update()
     {
-        if(Health < 1) Destroy(gameObject);
+        if (Health < 1)
+        {
+            IsEnemyOnRange.EnemiesInRange.Remove(gameObject);
+            Destroy(gameObject);
+        }
+           
     }
 }

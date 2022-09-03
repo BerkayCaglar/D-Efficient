@@ -11,7 +11,7 @@ public class CamControl : MonoBehaviour
     private float CamSpeed = 100f;
 
     static public bool ShakeStarter = false;
-    private float ShakeDuration = 0.02f;
+    private float ShakeDuration = 0.10f;
 
     private void Awake()
     {

@@ -20,8 +20,11 @@ public class PlayerControl : MonoBehaviour
     private Vector3 Velcity;
     private bool isGrounded;
     private bool DoubleJump = false;
-    
-    
+    public float DoubleJumpPower = 5f;
+    private float basictimer = 0.01f;
+
+    private int count = 0;
+
     private void Awake()
     {
         PlayerControler = this.gameObject.GetComponent<CharacterController>();
@@ -29,28 +32,30 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
-        PlayerMovement();
         Gravity();
+        PlayerMovement();
         Jumping();
         DoubleJumping();
     }
+    
 
     private void Jumping()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && count ==0)
         {
             if (isGrounded == true)
             {
                 Velcity.y = Mathf.Sqrt(JumpPower * -2f * GravityScale); 
                 DoubleJump = true;
+                count++;
             }
         }
     }
     private void DoubleJumping()
     {
-        if (Input.GetButtonDown("Jump") && DoubleJump == true)
+        if (Input.GetButtonDown("Jump") && DoubleJump && count ==1 && !isGrounded)
         {
-            Velcity.y = Mathf.Sqrt(JumpPower * -2f * GravityScale); 
+            Velcity.y = Mathf.Sqrt(DoubleJumpPower * -2f * GravityScale);
             DoubleJump = false;
         }
     }
@@ -61,6 +66,7 @@ public class PlayerControl : MonoBehaviour
         if (isGrounded == true && Velcity.y < 0)
         {
             Velcity.y = -2f;
+            count = 0;
         }
         
         Velcity.y += GravityScale * Time.deltaTime;

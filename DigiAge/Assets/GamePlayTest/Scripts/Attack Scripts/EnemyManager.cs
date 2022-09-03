@@ -23,10 +23,7 @@ public class EnemyManager : MonoBehaviour
 
     public static void EnemyShaker(GameObject enemy)
     {
-        Debug.Log( enemy.transform.GetChild((0)).name);
-        /*
-        Material enemyColor = enemy.GetComponent<Renderer>().material;
-        enemy.transform.GetChild((0)).GetComponent<Renderer>().material.SetColor("_Color", Color.red);
-        */
+        Animator enemyAnimator = enemy.GetComponent<Animator>();
+        enemyAnimator.Play("HitAnimation");
     }
 }

@@ -6,22 +6,23 @@ using UnityEngine;
 public class IsEnemyOnRange : MonoBehaviour
 {
     static public bool IsOnRange { get; private set; }
-    static public GameObject EnemyGameObject { get; private set; }
+
+    public static List<GameObject> EnemiesInRange = new List<GameObject>();
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(("Enemy")))
         {
             IsOnRange = true;
-            EnemyGameObject = other.gameObject;
+            EnemiesInRange.Add(other.gameObject);
         }
     }
-
+    
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag(("Enemy")))
         {
             IsOnRange = false;
-            EnemyGameObject = null;
+            EnemiesInRange.Remove(other.gameObject);
         }
     }
 }
