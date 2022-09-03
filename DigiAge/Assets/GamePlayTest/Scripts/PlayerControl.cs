@@ -29,14 +29,10 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
-        Jumping();
-        DoubleJumping();
-    }
-
-    private void FixedUpdate()
-    {
         PlayerMovement();
         Gravity();
+        Jumping();
+        DoubleJumping();
     }
 
     private void Jumping()
