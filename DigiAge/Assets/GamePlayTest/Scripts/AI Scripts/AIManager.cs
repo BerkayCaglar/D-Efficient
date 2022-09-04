@@ -33,7 +33,7 @@ public class AIManager : MonoBehaviour
     
     private void Awake()
     {
-        player = GameObject.Find("Player").transform;
+        player = GameObject.Find("PlayerTest").transform;
         agent = GetComponent<NavMeshAgent>();
     }
 

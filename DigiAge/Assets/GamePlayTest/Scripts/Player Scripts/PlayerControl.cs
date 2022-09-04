@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    private CharacterController PlayerControler;
+    public CharacterController PlayerControler;
     
     private float speed = 6f;
     private float TurnSmoothVelocity;
@@ -24,6 +24,9 @@ public class PlayerControl : MonoBehaviour
     private float basictimer = 0.01f;
 
     private int count = 0;
+    
+    //Dash & Movement
+    public Vector3 moveDir;
 
     private void Awake()
     {
@@ -56,6 +59,7 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetButtonDown("Jump") && DoubleJump && count ==1 && !isGrounded)
         {
             Velcity.y = Mathf.Sqrt(DoubleJumpPower * -2f * GravityScale);
+            DashEx.dashSpeed *= 2f;
             DoubleJump = false;
         }
     }
@@ -85,6 +89,7 @@ public class PlayerControl : MonoBehaviour
             float Angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, TargetAngle, ref TurnSmoothVelocity,
                 TurnSmoothTime);
             
+            moveDir = Quaternion.Euler(0, TargetAngle, 0) * Vector3.forward;
             transform.rotation = Quaternion.Euler(0f,Angle,0f);
             PlayerControler.Move(MoveDirection * speed * Time.deltaTime);
         }

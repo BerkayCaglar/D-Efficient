@@ -24,6 +24,9 @@ public class EnemyManager : MonoBehaviour
     public static void EnemyShaker(GameObject enemy)
     {
         Animator enemyAnimator = enemy.GetComponent<Animator>();
-        enemyAnimator.Play("HitAnimation");
+        if (enemy.GetComponent<BasicEnemy>())
+        {
+            enemyAnimator.Play("HitAnimation");
+        }
     }
 }
