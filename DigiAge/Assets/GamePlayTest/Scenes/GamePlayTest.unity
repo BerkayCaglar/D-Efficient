@@ -1483,6 +1483,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215701148}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &221098321 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5871195660693201553, guid: 8d3931be807400a488ad87491fa69dff,
+    type: 3}
+  m_PrefabInstance: {fileID: 1233673525}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &238832164
 GameObject:
   m_ObjectHideFlags: 0
@@ -5963,7 +5969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 1846601736}
-  player: {fileID: 0}
+  player: {fileID: 221098321}
   WhatisGround:
     serializedVersion: 2
     m_Bits: 256
@@ -5971,12 +5977,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   WalkPointRange: 50
-  TimeBetweenAttacks: 2
   SightRange: 15
   AttackRange: 3.07
   PlayerInsightRange: 0
   PlayerInAttackRange: 0
-  health: 20
+  Hit: 5
+  health: 100
 --- !u!195 &1846601736
 NavMeshAgent:
   m_ObjectHideFlags: 0

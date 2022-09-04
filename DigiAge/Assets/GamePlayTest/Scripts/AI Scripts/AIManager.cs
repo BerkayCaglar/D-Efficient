@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class AIManager : MonoBehaviour
@@ -17,28 +18,33 @@ public class AIManager : MonoBehaviour
     private bool WalkPointSet;
     public float WalkPointRange;
     
-    //Attack
-    public float TimeBetweenAttacks;
-    private bool AlreadyAttacked;
-
-    //public GameObject projecttile;
-    
     //states
     public float SightRange;
     public float AttackRange;
     public bool PlayerInsightRange;
     public bool PlayerInAttackRange;
+    
+    //Can&Hit
 
+    public float Hit;
+    private Text HealthText;
     public float health;
+    private bool AttackBool = true;
     
     private void Awake()
     {
-        player = GameObject.Find("PlayerTest").transform;
+        //player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+    }
+
+    private void Start()
+    {
+        StartCoroutine(AttackWait());
     }
 
     private void Update()
     {
+        //HealthText.text = health.ToString();
         PlayerInsightRange = Physics.CheckSphere(transform.position, SightRange, WhatisPlayer);
         PlayerInAttackRange = Physics.CheckSphere(transform.position, AttackRange, WhatisPlayer);
 
@@ -75,7 +81,6 @@ public class AIManager : MonoBehaviour
             WalkPointSet = false;
         }
     }
-
     private void SearchWalkPoint()
     {
         float randomZ = Random.Range(-WalkPointRange, WalkPointRange);
@@ -95,24 +100,15 @@ public class AIManager : MonoBehaviour
     private void AttackPlayer()
     {
         agent.SetDestination(transform.position);
-        transform.LookAt(player);
+        //transform.LookAt(player);
 
-        if (!AlreadyAttacked)
+        if (AttackBool)
         {
-            //Rigidbody rb = Instantiate(projecttile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-           // rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-          //  rb.AddForce(transform.up * 8f, ForceMode.Impulse);
-            
-            AlreadyAttacked = true;
-            Invoke(nameof(ResetAttack),TimeBetweenAttacks);
+            health = health - Hit;
+            AttackBool = false;
+            StartCoroutine(AttackWait());
         }
     }
-
-    private void ResetAttack()
-    { 
-        AlreadyAttacked = false;
-    }
-
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -122,17 +118,23 @@ public class AIManager : MonoBehaviour
             Invoke(nameof(DestroyEnemy),0.5f);
         }
     }
-
     private void DestroyEnemy()
     {
         Destroy(gameObject);
     }
-
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, AttackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, SightRange);
+    }
+    IEnumerator AttackWait()
+    {
+        if (!AttackBool)
+        {
+            yield return new WaitForSecondsRealtime(2f);
+            AttackBool = true;
+        }
     }
 }
