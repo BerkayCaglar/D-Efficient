@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 160247640}
   - component: {fileID: 160247643}
   - component: {fileID: 160247642}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 5871195660028208508}
   - component: {fileID: 5871195660028208511}
   - component: {fileID: 5871195660028208510}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 1739198403}
   - component: {fileID: 1739198404}
   - component: {fileID: 8835643085626308418}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5871195660740705616}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 5871195661488591741}
   - component: {fileID: 5871195661488591740}
   - component: {fileID: 5871195661488591743}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
