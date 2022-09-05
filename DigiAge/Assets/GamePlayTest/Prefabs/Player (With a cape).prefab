@@ -296,6 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba82c5572af5ed640a9b1f285b85fee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerControler: {fileID: 0}
   GravityScale: -49.05
   GroundCheck: {fileID: 5871195660740705616, guid: 8d3931be807400a488ad87491fa69dff,
     type: 3}
@@ -305,6 +306,7 @@ MonoBehaviour:
     m_Bits: 256
   JumpPower: 4
   DoubleJumpPower: 5
+  moveDir: {x: 0, y: 0, z: 0}
 --- !u!1 &3689679887089077570
 GameObject:
   m_ObjectHideFlags: 0

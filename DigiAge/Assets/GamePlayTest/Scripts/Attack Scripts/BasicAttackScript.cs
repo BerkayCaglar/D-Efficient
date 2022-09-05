@@ -10,7 +10,6 @@ public class BasicAttackScript : MonoBehaviour
         if (Input.GetMouseButtonDown((0)) && IsEnemyOnRange.IsOnRange && IsEnemyOnRange.EnemiesInRange.Count !=0)
         {
             ResultOfAttack();
-            CamControl.ShakeStarter = true;
         }
 
     }
@@ -23,6 +22,8 @@ public class BasicAttackScript : MonoBehaviour
             {
                 i.GetComponent<BasicEnemy>().Health -= 20;
                 EnemyManager.EnemyShaker(i);
+                PostProcessManager.PostProcessTrigger((true));
+                CamControl.ShakeStarter = true;
             }
             
         }

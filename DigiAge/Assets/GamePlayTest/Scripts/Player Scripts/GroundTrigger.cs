@@ -7,7 +7,7 @@ public class GroundTrigger : MonoBehaviour
 {
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Ground"))
+        if (other.CompareTag("Ground") || other.CompareTag("Wall"))
         {
             DashEx.dashSpeed = 50;
         }

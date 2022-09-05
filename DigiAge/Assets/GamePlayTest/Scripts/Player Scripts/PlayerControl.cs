@@ -23,7 +23,7 @@ public class PlayerControl : MonoBehaviour
     public float DoubleJumpPower = 5f;
     private float basictimer = 0.01f;
 
-    private int count = 0;
+    private int doubleJumpCount = 0;
     
     //Dash & Movement
     public Vector3 moveDir;
@@ -44,19 +44,19 @@ public class PlayerControl : MonoBehaviour
 
     private void Jumping()
     {
-        if (Input.GetButtonDown("Jump") && count ==0)
+        if (Input.GetButtonDown("Jump") && doubleJumpCount ==0)
         {
             if (isGrounded == true)
             {
                 Velcity.y = Mathf.Sqrt(JumpPower * -2f * GravityScale); 
                 DoubleJump = true;
-                count++;
+                doubleJumpCount++;
             }
         }
     }
     private void DoubleJumping()
     {
-        if (Input.GetButtonDown("Jump") && DoubleJump && count ==1 && !isGrounded)
+        if (Input.GetButtonDown("Jump") && DoubleJump && doubleJumpCount ==1 && !isGrounded)
         {
             Velcity.y = Mathf.Sqrt(DoubleJumpPower * -2f * GravityScale);
             DashEx.dashSpeed *= 2f;
@@ -70,7 +70,7 @@ public class PlayerControl : MonoBehaviour
         if (isGrounded == true && Velcity.y < 0)
         {
             Velcity.y = -2f;
-            count = 0;
+            doubleJumpCount = 0;
         }
         
         Velcity.y += GravityScale * Time.deltaTime;
