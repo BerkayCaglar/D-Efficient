@@ -9,7 +9,7 @@ public class DashEx : MonoBehaviour
 
     static public float dashSpeed = 50;
     static public int countToDash = 0;
-    public float dashTime;
+    static public float dashTime = 0.2f;
     private float DashTimer=2f;
     private bool DashCheck = false;
     

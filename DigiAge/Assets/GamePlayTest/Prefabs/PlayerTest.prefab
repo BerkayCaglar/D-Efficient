@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba82c5572af5ed640a9b1f285b85fee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerControler: {fileID: 0}
+  PlayerControler: {fileID: 5871195660693201646}
   GravityScale: -49.05
   GroundCheck: {fileID: 5871195660740705616}
   GroundDistance: 0.4
