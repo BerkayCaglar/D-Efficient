@@ -11,7 +11,6 @@ public class BasicAttackScript : MonoBehaviour
         {
             ResultOfAttack();
         }
-
     }
 
     private void ResultOfAttack()
@@ -25,7 +24,6 @@ public class BasicAttackScript : MonoBehaviour
                 PostProcessManager.PostProcessTrigger((true));
                 CamControl.ShakeStarter = true;
             }
-            
         }
     }
 }

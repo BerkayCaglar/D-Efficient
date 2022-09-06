@@ -32,6 +32,5 @@ public class BasicEnemy : MonoBehaviour
             IsEnemyOnRange.EnemiesInRange.Remove(gameObject);
             Destroy(gameObject);
         }
-           
     }
 }

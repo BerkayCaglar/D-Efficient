@@ -89,10 +89,10 @@ GameObject:
   m_Component:
   - component: {fileID: 659283504885577851}
   - component: {fileID: 659283504885577732}
+  - component: {fileID: 2504583106417143208}
   - component: {fileID: 659283504885577733}
   - component: {fileID: 6367126160274249001}
   - component: {fileID: 6367126160274249006}
-  - component: {fileID: 2504583106417143208}
   - component: {fileID: 6367126160991897644}
   - component: {fileID: 1782037361107161967}
   m_Layer: 11
@@ -138,6 +138,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.82, z: 0}
+--- !u!135 &2504583106417143208
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659283504885577850}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4
+  m_Center: {x: 0, y: 3, z: 3}
 --- !u!114 &659283504885577733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,19 +197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e818b5d4a055e5143a22c9000e9c76ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &2504583106417143208
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 659283504885577850}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 4
-  m_Center: {x: 0, y: 3, z: 3}
 --- !u!114 &6367126160991897644
 MonoBehaviour:
   m_ObjectHideFlags: 0

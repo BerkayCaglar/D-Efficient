@@ -12,20 +12,16 @@ public class AIManager : MonoBehaviour
     public Transform player;
     public LayerMask WhatisGround;
     public LayerMask WhatisPlayer;
-
-    //patrol
+    
     private Vector3 WalkPoint;
     private bool WalkPointSet;
     public float WalkPointRange;
     
-    //states
     public float SightRange;
     public float AttackRange;
     public bool PlayerInsightRange;
     public bool PlayerInAttackRange;
     
-    //Can&Hit
-
     public float Hit;
     private Text HealthText;
     public float health;
@@ -33,7 +29,6 @@ public class AIManager : MonoBehaviour
     
     private void Awake()
     {
-        //player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -100,8 +95,8 @@ public class AIManager : MonoBehaviour
     private void AttackPlayer()
     {
         agent.SetDestination(transform.position);
-        //transform.LookAt(player);
-
+        
+        
         if (AttackBool)
         {
             health = health - Hit;

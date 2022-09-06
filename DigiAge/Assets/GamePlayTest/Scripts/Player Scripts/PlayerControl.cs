@@ -24,13 +24,14 @@ public class PlayerControl : MonoBehaviour
     private float basictimer = 0.01f;
 
     private int doubleJumpCount = 0;
-    
-    //Dash & Movement
     public Vector3 moveDir;
 
+    private Collider test;
+    
     private void Awake()
     {
         PlayerControler = this.gameObject.GetComponent<CharacterController>();
+        test = this.gameObject.GetComponent<BoxCollider>();
     }
 
     private void Update()
@@ -92,6 +93,15 @@ public class PlayerControl : MonoBehaviour
             moveDir = Quaternion.Euler(0, TargetAngle, 0) * Vector3.forward;
             transform.rotation = Quaternion.Euler(0f,Angle,0f);
             PlayerControler.Move(MoveDirection * speed * Time.deltaTime);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            this.gameObject.transform.Translate(other.gameObject.transform.position.x,
+                other.gameObject.transform.position.y + 2, other.gameObject.transform.position.z);
         }
     }
 }

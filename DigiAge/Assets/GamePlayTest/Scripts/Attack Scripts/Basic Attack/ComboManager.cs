@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class ComboManager : MonoBehaviour
 {
-    void Update()
-    {
-        
-    }
+    
 }
