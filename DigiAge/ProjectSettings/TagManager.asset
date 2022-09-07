@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Wall
   - Post Process
+  - Exterior Walls
   layers:
   - Default
   - TransparentFX
