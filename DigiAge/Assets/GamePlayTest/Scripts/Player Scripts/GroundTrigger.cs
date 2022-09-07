@@ -9,7 +9,8 @@ public class GroundTrigger : MonoBehaviour
     {
         if (other.CompareTag("Ground") || other.CompareTag("Wall"))
         {
-            DashEx.dashSpeed = 50;
+            DashEx.dashSpeed = 15;
+            //this.gameObject.GetComponent<DashEx>().dashSpeed *= 2f;
         }
     }
 }

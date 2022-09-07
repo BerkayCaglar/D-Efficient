@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class AIManager : MonoBehaviour
@@ -23,7 +22,6 @@ public class AIManager : MonoBehaviour
     public bool PlayerInAttackRange;
     
     public float Hit;
-    private Text HealthText;
     public float health;
     private bool AttackBool = true;
     

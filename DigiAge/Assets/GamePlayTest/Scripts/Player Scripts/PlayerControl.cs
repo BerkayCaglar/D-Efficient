@@ -59,8 +59,8 @@ public class PlayerControl : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && DoubleJump && doubleJumpCount ==1 && !isGrounded)
         {
-            Velcity.y = Mathf.Sqrt(DoubleJumpPower * -2f * GravityScale);
-            DashEx.dashSpeed *= 2f;
+            Velcity.y = Mathf.Sqrt(DoubleJumpPower * -2f * GravityScale); ;
+            DashEx.dashSpeed *= 1.5f;
             DoubleJump = false;
         }
     }

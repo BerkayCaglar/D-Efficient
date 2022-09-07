@@ -7,9 +7,10 @@ public class DashEx : MonoBehaviour
 {
     PlayerControl moveScript;
 
-    static public float dashSpeed = 20;
-    static public int countToDash = 0;
-    static public float dashTime = 0.2f;
+    
+    static public float dashSpeed = 15; 
+    public int countToDash = 0;
+    public float dashTime = 0.2f;
     private float DashTimer=2f;
     private bool DashCheck = false;
     
